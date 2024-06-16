@@ -1,0 +1,17 @@
++JobBatchName = "@@jobName@@"
+Universe = vanilla 
+Executable = run.sh 
+Error = job.$(ProcId).err
+Output = job.$(ProcId).out
+Log = job.log
+Arguments = @@jobName@@ fragment.py @@nEvents@@ $(ProcId) 1
+Requirements = HAS_SINGULARITY == True
+use_x509userproxy = True
+should_transfer_files = yes
+transfer_input_files = fragment.py,pileupinput.txt
+x509userproxy = /tmp/x509up_u100199
++SingularityImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel8"
++JobFlavour = "testmatch"
+#RequestDisk = 2000000
+#RequestMemory = 4000 
+Queue @@nJobs@@
