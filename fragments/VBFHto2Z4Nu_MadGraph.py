@@ -31,6 +31,7 @@ generator = cms.EDFilter("Pythia8ConcurrentHadronizerFilter",
             'pythia8CommonSettings',
             'pythia8CP5Settings',
             'pythia8PSweightsSettings',
+            'processParameters'
         )
     ),
     comEnergy = cms.double(13600),
